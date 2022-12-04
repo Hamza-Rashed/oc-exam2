@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="css/newTab.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div class="notes">
+      <h1>
+        أهلا <span id="name"></span>
+      </h1>
+      <h1>نقدم لك الامتحان المركزي لمادة التعاون عبر الانترنت</h1>
+      <h1>في الاسفل تجد كيفية الاجابة على الاسئلة واذا لديك اي استفسار قم بسؤال المدرب</h1>
+
+      <button class="button" onclick="getInfo()">بدء الامتحان</button>
+    </div>
+
+    <footer>
+
+        <h1>
+          هنا تجد السؤال مكتوب
+        </h1>
+    
+        <div class="buttons">
+          <button onclick="alert('عند الضغط على ارسال يتم ارسال السؤال')">إرسال</button>
+        </div>
+      </footer>
+
+    <script>
+        let nameSpan = document.getElementById("name");
+        nameSpan.innerHTML = localStorage.getItem("name")
+function getInfo(){
+  window.close();
+  window.open('/nazari/index.html')
+}
+
+    </script>
+</body>
+</html>

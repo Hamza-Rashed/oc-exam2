@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>Document</title>
+</head>
+<body>
+    <header></header>
+    <div class="mainPage">
+        <input type="text" id="name" placeholder="اكتب اسمك الثلاثي">
+       <br> <br> <button onclick="start()"></button>
+    </div>
+
+    <script>
+        if(localStorage.getItem("name")){
+            document.getElementsByTagName("button")[0].innerHTML = "إعادة الامتحان"
+        }else{
+            document.getElementsByTagName("button")[0].innerHTML = "بدء الامتحان"
+        }
+
+        function start(){
+            let permission = ""
+            if(localStorage.getItem("name")){
+                permission = prompt("أنت على وشك إعادة الامتحان يرجى كتابة النص 'تم' لإكمال امتحانك السابق أو أي نص آخر لإعادة الامتحان")
+            }
+            
+            if(permission.trim() == "تم"){
+                window.close();
+                let url = localStorage.getItem("urln")
+                window.open(url)
+            }else{
+                localStorage.clear();
+                let name = document.getElementById("name");
+                localStorage.setItem("name" , name.value)
+                localStorage.setItem("wrongAnswers" , JSON.stringify([]))
+                localStorage.setItem("fAnswer" , JSON.stringify([]))
+                localStorage.setItem("numberQ" , 18)
+                JSON.stringify(localStorage.setItem("urlw" , ""))
+                JSON.stringify(localStorage.setItem("urln" , ""))
+                window.close();
+                window.open('/newLocation.html')
+            }
+        }
+    </script>
+</body>
+</html>

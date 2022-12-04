@@ -1,0 +1,73 @@
+*{
+    transition: 0.5s;
+    overflow-y: hidden;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+footer
+{
+    position: absolute;
+    bottom: 0;
+    height: 175px;
+    background-color: antiquewhite;
+    width: 100%;
+    text-align: center;
+}
+
+.notes{
+    width: 100%;
+    text-align: center;
+    padding-top: 100px;
+}
+
+footer h1{
+    direction: rtl;
+    padding-top: 3%;
+}
+
+.buttons{
+    width: 50%;
+    float: right;
+}
+
+#name{
+    color: blue;
+}
+
+.button{
+    width: 25%;
+    height: 30px;
+    background-color: rgb(168, 208, 208);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+footer button{
+ margin-left: 30%;
+ width: 100px;
+ height: 35px;
+ font-weight: bold;
+ border-radius: 10px;
+ cursor: pointer;   
+}
+
+.content{
+    padding: 25px;
+    height: 450px;
+    width: 100%;
+}
+
+.content li{
+    font-size: 18px;
+    height: 20px;
+}
