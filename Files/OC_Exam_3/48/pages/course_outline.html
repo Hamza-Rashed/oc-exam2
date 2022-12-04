@@ -1,0 +1,95 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title localizationid="courseoutline_Online_Learning_b5ef3375-b869-407c-ac6b-f4f145a9b045">
+    التعلم عبر الإنترنت
+  </title>
+  <link type="text/css" rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="../css/style2.css" />
+  <script type="text/javascript" src="../js/extensions.js"></script>
+  <script type="text/javascript" src="../js/JQuery.js"></script>
+  <script type="text/javascript" src="../js/data.js"></script>
+  <script type="text/javascript" src="../js/main.js"></script>
+  <script type="text/javascript">
+    var courseManager = this.OnlineLearning.CourseManager;
+    $(document).ready(function () {
+      var course = courseManager.getCurrentCourse();
+      if (course) {
+        $("#courseTitle").html(course.title);
+        $("#timeLocation").html(course.location);
+        $("#courseDescription").html(course.description);
+        $("#lectures").html(
+          buildLecturesHTMLContent(
+            courseManager.getDBCourseLecturesByCourseID(course.id)
+          )
+        );
+        $("#lectures dt a").click(function () {
+          courseManager.setCurrentCourseLastAccessedLecture(
+            $(this).attr("id"),
+            $(this).attr("parent")
+          );
+        });
+      }
+    });
+  </script>
+</head>
+
+<body dir="rtl">
+  <div class="wrap-main" style="margin-bottom: 150px">
+    <div id="header">
+      <a id="logo" href="../index2.html">
+        <img id="headerImg" align="middle" src="../img/logo.png" />
+      </a>
+    </div>
+    <div class="container">
+      <div class="name">
+        <div style="margin-bottom: 10px"
+          localizationid="courseoutline_Back_To_Home_ce8d143c-ee60-42dd-aae8-1dad2ac1542f">
+          <a href="../index2.html"> رجوع إلى الصفحة الرئيسية </a>
+        </div>
+        <div class="top_right_card">
+          <h1 id="courseTitle" localizationid="courseoutline_[course_title]_fc7b11ba-a18a-4e17-b2a3-fb562f46781c">
+            [course_title]
+          </h1>
+          <h3 id="timeLocation"
+            localizationid="courseoutline_[course_time_location]_546c284a-433b-4232-883e-5e5790221648">
+            [course_time_location]
+          </h3>
+          <p id="courseDescription"
+            localizationid="courseoutline_[course_description]_af39bb60-987a-440b-a32c-94aae4145b6e">
+            [course_description]
+          </p>
+        </div>
+      </div>
+      <br />
+      <div class="top_right_card">
+        <h2 localizationid="courseoutline_Course_Outline_75b98f71-33d9-4ded-949b-91345a6b3825">
+          مخطط المقرر التعليمي
+        </h2>
+        <p
+          localizationid="courseoutline_Below_is_the_course_outline_includes_the_chapters_which_will_7dc06b68-d53f-48f0-bd15-ae4bd753cfd5">
+          في الأسفل مخطط المقرر التعليمي الذي يوضح الموضوعات التي سيتم تناولها
+          كل أسبوع:
+        </p>
+        <dl id="lectures"></dl>
+      </div>
+      <p localizationid="courseoutline__12684860-d2db-4152-ba2e-3ef6c73a9c0a">
+        &nbsp;
+      </p>
+    </div>
+  </div>
+
+  <footer class="footerNew" id="f1">
+    <div class="one" id="footer">
+
+    </div>
+    <div class="tow">
+      <button onclick="send()">إرسال</button>
+    </div>
+  </footer>
+
+  <script src="/renderQuestions.js"></script>
+</body>
+
+</html>
