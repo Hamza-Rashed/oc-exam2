@@ -1,0 +1,51 @@
+*{
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.footerNew{
+    background-color: rgb(156, 181, 188);
+    position: fixed;
+    bottom: 0px;
+    width: 100%;
+    height: 175px;
+    z-index: 100;
+    padding-bottom: 50px;
+}
+
+.footerNew h1{
+    color: black;
+    font-size: 30px;
+}
+
+.one{
+    text-align: center;
+    width: 100%;
+    padding-top: 15px;
+    max-height: 100px;
+    overflow-y: scroll;
+    font-size: 22px;
+}
+.tow{
+    padding-right: 30px;
+}
+.tow button{
+    width: 9.7%;
+    height: 40px;
+    cursor: pointer;
+    font-size: 18px;
+    float: right;
+}
+
+.nn{
+    border: 1 solid black;
+}
+tr,td{
+    border: 1 solid black;
+}
+
+.container{
+    margin-bottom: 150px;
+}
