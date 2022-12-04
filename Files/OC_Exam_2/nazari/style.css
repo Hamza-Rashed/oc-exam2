@@ -1,0 +1,32 @@
+*{
+    transition: 0.5s;
+    overflow-y: hidden;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+.container{
+    width: auto;
+    height: auto;
+    padding: 40px;
+    direction: rtl;
+    font-size: 22px;
+}
+
+.one{
+    max-height: 100px;
+    overflow-y: scroll;
+}
+
+.tow button{
+    width: 15%;
+}

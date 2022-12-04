@@ -1,0 +1,172 @@
+<html>
+  <head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <title>Social Media</title>
+
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/dialog.css" />
+    <link rel="stylesheet" href="../css/profile.css" />
+    <link rel="stylesheet" href="../css/style2.css" />
+
+    <script type="text/javascript" src="../js/jquery.min.js"></script>
+    <script type="text/javascript" src="../js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../js/storageManager.js"></script>
+    <script type="text/javascript" src="../js/dialog.js"></script>
+    <script type="text/javascript" src="../js/shared.js"></script>
+    <script type="text/javascript" src="../js/init.js"></script>
+    <script type="text/javascript" src="../js/profile.js"></script>
+  </head>
+
+  <body dir="rtl">
+    <div id="mainDiv">
+      <!--Page Header-->
+      <div id="pageHeader">
+        <div id="searchContainer">
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+          />
+          <div id="searchIconContainer">
+            <img src="../img/search-icon.png" alt="" />
+          </div>
+        </div>
+        <div id="headerLinksContainer">
+          <strong
+            ><a class="headerLink" href="profile.html">الملف الشخصي</a></strong
+          >
+          <strong
+            ><a class="headerLink" href="homePage.html"
+              >الصفحة الرئيسية</a
+            ></strong
+          >
+          <strong
+            ><a class="headerLink" href="settings.html">الإعدادات</a></strong
+          >
+        </div>
+      </div>
+
+      <!--Profile and Covor Images-->
+      <div id="imageDiv">
+        <script type="text/javascript">
+          loadProfileImageSection();
+        </script>
+      </div>
+
+      <!--Link Section-->
+      <div id="linkSection">
+        <span class="activatedLink" id="profile">الملف الشخصي</span>
+        <a href="about.html"><span class="link" id="about">حول</span></a>
+        <a href="friends.html"
+          ><span class="link" id="friends">الأصدقاء</span></a
+        >
+        <a href="photos.html"><span class="link" id="photos">الصور</span></a>
+        <a href="likes.html"><span class="link" id="likes">الإعجابات</span></a>
+      </div>
+
+      <br /><br /><br />
+
+      <div id="mainSection">
+        <!--Left Section-->
+        <div id="leftSection">
+          <!--About Section-->
+          <div id="aboutSection" class="category" style="height: 160px">
+            <a href="about.html"><h4>حول</h4></a>
+            <script type="text/javascript">
+              document.write(getItem("about"));
+            </script>
+          </div>
+
+          <!--Photos Section-->
+          <div id="photosSection" class="category" style="height: 240px">
+            <script type="text/javascript">
+              loadPhotosSection();
+            </script>
+          </div>
+
+          <!--Friends Section-->
+          <div id="friendsSection" class="category" style="height: 240px">
+            <script type="text/javascript">
+              loadFriendsSection();
+            </script>
+          </div>
+
+          <!--Likes Section-->
+          <div id="likesSection" class="category" style="height: 240px">
+            <script type="text/javascript">
+              loadLikesSection();
+            </script>
+          </div>
+        </div>
+
+        <!--Right Section-->
+        <div id="rightSection" style="margin-bottom: 450px">
+          <!--New Post Section-->
+          <div id="newPostDiv">
+            <div>
+              <div
+                class="postType active"
+                id="Status"
+                onclick="onPostTypeClick(this, 'ماذا يجول في خاطرك؟');"
+              >
+                الحالة
+              </div>
+              &nbsp;&nbsp;
+              <div
+                class="postType"
+                id="Hyperlink"
+                onclick="onPostTypeClick(this, 'انشر ارتباط تشعبي');"
+              >
+                ارتباط تشعبي
+              </div>
+            </div>
+            <textarea
+              id="newPostInput"
+              autocomplete="off"
+              autocorrect="off"
+              autocapitalize="off"
+              spellcheck="false"
+            ></textarea>
+            <br />
+            <button
+              id="newPostBtn"
+              class="btn"
+              onclick="addPostBtnClick(this);"
+            >
+              نشر
+            </button>
+          </div>
+
+          <script type="text/javascript">
+            preparePostType("ماذا يجول في خاطرك؟");
+          </script>
+          <br /><br />
+
+          <!--All Posts Section-->
+          <div id="posts">
+            <script type="text/javascript">
+              loadPostsSection();
+            </script>
+          </div>
+        </div>
+      </div>
+
+      <div id="pageFooter" style="height: 10%"></div>
+    </div>
+
+    <footer class="footerNew" id="f1">
+      <div class="one" id="footer">
+
+      </div>
+      <div class="tow">
+        <button onclick="send()">إرسال</button>
+      </div>
+    </footer>
+
+    <script src="/renderQuestions.js"></script>
+  </body>
+</html>
